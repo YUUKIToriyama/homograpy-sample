@@ -28,17 +28,8 @@ json[3].update({"u": 0, "v": bc})
 # 連立方程式を解いて変換行列を求める
 a,b,c,d,e,f,g,h = sym.symbols("a b c d e f g h")
 
-"""
-coordinates = [
-    {"x": 750, "y": 717, "u": 0, "v": 0},
-    {"x": 1573, "y": 325, "u": 500, "v": 0},
-    {"x": 2578, "y": 1481, "u": 500, "v": 500},
-    {"x": 1664, "y": 2140, "u": 0, "v": 500}
-]
-"""
 coordinates = json
 equations = []
-
 for i in range(4):
     coords = coordinates[i]
     equations.append(a * coords["x"] + b * coords["y"] + c - coords["u"] * (g * coords["x"] + h * coords["y"] + 1))
